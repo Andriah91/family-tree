@@ -1,0 +1,55 @@
+<div class="wrapper" ng-show="user.loggedIn()">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header" ng-if="!permissions.roles.contains('update')" i18n="view_role"></h1>
+            <h1 class="page-header" ng-if="permissions.roles.contains('update')" i18n="edit_role"></h1>
+            <div ng-include="'partials/alert.html'"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table ng-table="tableParams" class="table table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="header sortable" ng-class="{
+                                'sort-asc': tableParams.isSortBy('resource', 'asc'),
+                                'sort-desc': tableParams.isSortBy('resource', 'desc')
+                              }" ng-click="tableParams.sorting('resource', tableParams.isSortBy('resource', 'asc') ? 'desc' : 'asc')">
+                            <div i18n="resource"></div>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="resource in $data">
+                        <td class="vmiddle" ng-bind="resource.name"></td>
+                        <td class="vmiddle" style="width: 250px">
+                            <select selectpicker multiple="multiple" ng-model="resource.permissions" ng-disabled="!permissions.roles.contains('update')">
+                                <option value="create" ng-selected="resource.permissions.indexOf('create') !== -1" i18n="create"></option>
+                                <option value="read" ng-selected="resource.permissions.indexOf('read') !== -1" i18n="read"></option>
+                                <option value="update" ng-selected="resource.permissions.indexOf('update') !== -1" i18n="update"></option>
+                                <option value="delete" ng-selected="resource.permissions.indexOf('delete') !== -1" i18n="delete"></option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" ng-switch="permissions.roles.contains('update')">
+            <button type="submit" class="btn btn-success" ng-switch-when="true" ng-click="update()">
+                <span class="fa fa-save"></span> <span i18n="save"></span>
+            </button>
+            <button type="submit" class="btn btn-primary" ng-switch-when="true" ng-click="update(true)">
+                <span class="fa fa-check"></span> <span i18n="save_and_close"></span>
+            </button>
+            <button type="submit" class="btn btn-default" ng-switch-when="true" ng-click="cancel()">
+                <span class="fa fa-times"></span> <span i18n="close_without_saving"></span>
+            </button>
+            <button type="submit" class="btn btn-default" ng-switch-when="false" ng-click="cancel()">
+                <span class="fa fa-times"></span> <span i18n="close"></span>
+            </button>
+        </div>
+    </div>
+</div>

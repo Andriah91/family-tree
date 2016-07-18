@@ -1,0 +1,194 @@
+<section class="container">
+    <div class="row">
+        <div class="nav-tabs-custom">
+            <!-- Tabs within a box -->
+            <ul class="nav nav-tabs pull-right">
+                <li class="active"><a data-target="#tree" data-toggle="tab">Arbre</a></li>
+                <li><a data-target="#listes" data-toggle="tab">Listes</a></li>
+                <li class="pull-left header"><i class="fa fa-inbox"></i> Arbres</li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tree">
+                    <div class="row">
+                    <div class="col-md-8">
+                        <div class="pad">
+                            <div class="tree" ng-repeat="Gen1 in Families">
+                                <ul>
+                                  <li>
+                                    <a href="#">
+                                    <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="User Image">
+                                    </a>
+                                    <ul>
+                                      <li ng-repeat="Gen2 in Gen1.f">
+                                        <a href="#">{{Gen2.id}}</a>
+                                        <ul>
+                                          <li ng-repeat="Gen3 in Gen2.f">
+                                            <a href="#">{{Gen3.id}}</a>
+                                            <ul>
+                                              <li ng-repeat="Gen4 in Gen3.f">
+                                                <a href="#">{{Gen4.id}}</a>
+                                                <ul>
+                                                  <li ng-repeat="Gen5 in Gen4.f">
+                                                    <a href="#">{{Gen5.id}}</a>
+                                                    <ul>
+                                                      <li ng-repeat="Gen6 in Gen5.f">
+                                                        <a href="#">{{Gen6.id}}</a>
+                                                        <ul>
+                                                          <li ng-repeat="Gen7 in Gen6.f">
+                                                            <a href="#">{{Gen7.id}}</a>
+                                                          </li>
+                                                        </ul>
+                                                      </li>
+                                                    </ul>
+                                                  </li>
+                                                </ul>
+                                              </li>
+                                            </ul>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="text-center">
+                            <strong>Statistique</strong>
+                        </p>
+                      <div class="progress-group">
+                        <span class="progress-text">Add Products to Cart</span>
+                        <span class="progress-number"><b>160</b>/200</span>
+                        <div class="progress sm">
+                          <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                        </div>
+                      </div>
+                      <div class="progress-group">
+                        <span class="progress-text">Complete Purchase</span>
+                        <span class="progress-number"><b>310</b>/400</span>
+                        <div class="progress sm">
+                          <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                        </div>
+                      </div>
+                      <div class="progress-group">
+                        <span class="progress-text">Visit Premium Page</span>
+                        <span class="progress-number"><b>480</b>/800</span>
+                        <div class="progress sm">
+                          <div class="progress-bar progress-bar-green" style="width: 50%"></div>
+                        </div>
+                      </div>
+                      <div class="progress-group">
+                        <span class="progress-text">Send Inquiries</span>
+                        <span class="progress-number"><b>250</b>/500</span>
+                        <div class="progress sm">
+                          <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>  
+                </div>
+                <div class="tab-pane" id="listes">
+                troop
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--div class="col-md-12">
+          <div class="box box-danger">
+              <div class="box-header with-border">
+                  <h3 class="box-title">Arbre génélogique</h3>
+                   <div class="box-tools pull-right">
+                <span class="label label-danger">8 New Members</span>
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+              </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="pad">
+                            <div class="tree" ng-repeat="Gen1 in Families">
+                                <ul>
+                                  <li>
+                                    <a href="#">
+                                    <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="User Image">
+                                    </a>
+                                    <ul>
+                                      <li ng-repeat="Gen2 in Gen1.f">
+                                        <a href="#">{{Gen2.id}}</a>
+                                        <ul>
+                                          <li ng-repeat="Gen3 in Gen2.f">
+                                            <a href="#">{{Gen3.id}}</a>
+                                            <ul>
+                                              <li ng-repeat="Gen4 in Gen3.f">
+                                                <a href="#">{{Gen4.id}}</a>
+                                                <ul>
+                                                  <li ng-repeat="Gen5 in Gen4.f">
+                                                    <a href="#">{{Gen5.id}}</a>
+                                                    <ul>
+                                                      <li ng-repeat="Gen6 in Gen5.f">
+                                                        <a href="#">{{Gen6.id}}</a>
+                                                        <ul>
+                                                          <li ng-repeat="Gen7 in Gen6.f">
+                                                            <a href="#">{{Gen7.id}}</a>
+                                                          </li>
+                                                        </ul>
+                                                      </li>
+                                                    </ul>
+                                                  </li>
+                                                </ul>
+                                              </li>
+                                            </ul>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="text-center">
+                            <strong>Statistique</strong>
+                        </p>
+                      <div class="progress-group">
+                        <span class="progress-text">Add Products to Cart</span>
+                        <span class="progress-number"><b>160</b>/200</span>
+                        <div class="progress sm">
+                          <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                        </div>
+                      </div>
+                      <div class="progress-group">
+                        <span class="progress-text">Complete Purchase</span>
+                        <span class="progress-number"><b>310</b>/400</span>
+                        <div class="progress sm">
+                          <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                        </div>
+                      </div>
+                      <div class="progress-group">
+                        <span class="progress-text">Visit Premium Page</span>
+                        <span class="progress-number"><b>480</b>/800</span>
+                        <div class="progress sm">
+                          <div class="progress-bar progress-bar-green" style="width: 50%"></div>
+                        </div>
+                      </div>
+                      <div class="progress-group">
+                        <span class="progress-text">Send Inquiries</span>
+                        <span class="progress-number"><b>250</b>/500</span>
+                        <div class="progress sm">
+                          <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+            </div>
+          </div>
+        </div>

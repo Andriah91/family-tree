@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<phpunit
+    colors="true"
+    stopOnFailure="false"
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    syntaxCheck="false"
+    cacheTokens="true"
+    verbose="false"
+    bootstrap="../build/bootstrap.php">
+  <testsuites>
+    <testsuite name="unit">
+      <file>UnitTest.php</file>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist>
+      <directory suffix=".php">../api/application/core</directory>
+      <directory suffix=".php">../api/application/models</directory>
+      <directory suffix=".php">../api/application/views</directory>
+      <directory suffix=".php">../api/application/controllers</directory>
+      <directory suffix=".php">../api/application/helpers</directory>
+    </whitelist>
+  </filter>
+</phpunit>
